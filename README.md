@@ -70,8 +70,6 @@ Swin-Transformer-Object-Detection폴더에서 수행
 
 Pretrained모델은 아래에서 다운로드 받아서 수행
 
-Swin-T-IN1K모델(tiny model)을 다운로드 받은 후 아래 예시와 같이 수행  
-
 
 1. Pretrained models on ImageNet-1K ([Swin-T-IN1K](https://github.com/SwinTransformer/storage/releases/download/v1.0.0/swin_tiny_patch4_window7_224.pth), [Swin-S-IN1K](https://github.com/SwinTransformer/storage/releases/download/v1.0.0/swin_small_patch4_window7_224.pth), [Swin-B-IN1K](https://github.com/SwinTransformer/storage/releases/download/v1.0.0/swin_base_patch4_window7_224.pth)) and ImageNet-22K ([Swin-B-IN22K](https://github.com/SwinTransformer/storage/releases/download/v1.0.0/swin_base_patch4_window7_224_22k.pth), [Swin-L-IN22K](https://github.com/SwinTransformer/storage/releases/download/v1.0.0/swin_large_patch4_window7_224_22k.pth)) are provided.
 2. The supported code and models for ImageNet-1K image classification, COCO object detection and ADE20K semantic segmentation are provided.
@@ -85,6 +83,7 @@ python tools/train.py <CONFIG_FILE> --cfg-options model.pretrained=<PRETRAIN_MOD
 # multi-gpu training
 tools/dist_train.sh <CONFIG_FILE> <GPU_NUM> --cfg-options model.pretrained=<PRETRAIN_MODEL> [model.backbone.use_checkpoint=True] [other optional arguments] 
 ```
+Swin-T-IN1K모델(tiny model)을 다운로드 받은 후 아래 예시와 같이 수행 
 예를 들어, 저희 모델을 GPU 1개인 장치에서 학습시키려면(편의를 위해 pretrained된 모델 파일을 Swin-Transformer-Object-Detection폴더 내에 넣어서 수행),
 ```
 cd Swin-Transformer-Object-Detection
