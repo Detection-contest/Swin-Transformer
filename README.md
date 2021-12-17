@@ -66,7 +66,11 @@ python visualize.py
 </br>
 - 학습 수행  
 
-Swin-Transformer-Object-Detection폴더에서 수행, Pretrained모델은 아래에서 다운로드 받아서 수행함, Swin-T-IN1K모델을 다운로드 받은 후 아래 예시와 같이 수행  
+Swin-Transformer-Object-Detection폴더에서 수행 
+
+Pretrained모델은 아래에서 다운로드 받아서 수행
+
+Swin-T-IN1K모델(tiny model)을 다운로드 받은 후 아래 예시와 같이 수행  
 
 
 1. Pretrained models on ImageNet-1K ([Swin-T-IN1K](https://github.com/SwinTransformer/storage/releases/download/v1.0.0/swin_tiny_patch4_window7_224.pth), [Swin-S-IN1K](https://github.com/SwinTransformer/storage/releases/download/v1.0.0/swin_small_patch4_window7_224.pth), [Swin-B-IN1K](https://github.com/SwinTransformer/storage/releases/download/v1.0.0/swin_base_patch4_window7_224.pth)) and ImageNet-22K ([Swin-B-IN22K](https://github.com/SwinTransformer/storage/releases/download/v1.0.0/swin_base_patch4_window7_224_22k.pth), [Swin-L-IN22K](https://github.com/SwinTransformer/storage/releases/download/v1.0.0/swin_large_patch4_window7_224_22k.pth)) are provided.
