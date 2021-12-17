@@ -42,7 +42,9 @@
 - 데이터 전처리
 
 </br>
-- 학습 수행(Swin-Transformer-Object-Detection폴더에서 수행, Pretrained모델은 아래에서 다운로드 받아서 수행함, Swin-T-IN1K모델을 다운로드 받은 후 아래 예시와 같이 수행)
+- 학습 수행
+Swin-Transformer-Object-Detection폴더에서 수행, Pretrained모델은 아래에서 다운로드 받아서 수행함, Swin-T-IN1K모델을 다운로드 받은 후 아래 예시와 같이 수행  
+
 
 1. Pretrained models on ImageNet-1K ([Swin-T-IN1K](https://github.com/SwinTransformer/storage/releases/download/v1.0.0/swin_tiny_patch4_window7_224.pth), [Swin-S-IN1K](https://github.com/SwinTransformer/storage/releases/download/v1.0.0/swin_small_patch4_window7_224.pth), [Swin-B-IN1K](https://github.com/SwinTransformer/storage/releases/download/v1.0.0/swin_base_patch4_window7_224.pth)) and ImageNet-22K ([Swin-B-IN22K](https://github.com/SwinTransformer/storage/releases/download/v1.0.0/swin_base_patch4_window7_224_22k.pth), [Swin-L-IN22K](https://github.com/SwinTransformer/storage/releases/download/v1.0.0/swin_large_patch4_window7_224_22k.pth)) are provided.
 2. The supported code and models for ImageNet-1K image classification, COCO object detection and ADE20K semantic segmentation are provided.
@@ -69,4 +71,8 @@ python tools/test.py <CONFIG_FILE> <DET_CHECKPOINT_FILE> --eval bbox segm
 
 # multi-gpu testing
 tools/dist_test.sh <CONFIG_FILE> <DET_CHECKPOINT_FILE> <GPU_NUM> --eval bbox segm
+```
+예를 들어, 저희 모델을 GPU 1개인 장치에서 인퍼런스를 수행하라면,
+```
+python tools/test.py work_dirs/cascade_mask_rcnn_swin_tiny_patch4_window7_mstrain_480-800_giou_4conv1f_adamw_3x_coco/cascade_mask_rcnn_swin_tiny_patch4_window7_mstrain_480-800_giou_4conv1f_adamw_3x_coco.py work_dirs/cascade_mask_rcnn_swin_tiny_patch4_window7_mstrain_480-800_giou_4conv1f_adamw_3x_coco/latest.pth --eval bbox
 ```
