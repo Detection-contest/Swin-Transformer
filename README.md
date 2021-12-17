@@ -1,8 +1,8 @@
 # Detection-contest README.md
 - 환경 설정  
   0. 요구사항
-  <ul>NVIDIA Geforce GTX 1080 Ti</ul>
-  <ul>cuda 10.2</ul>
+  - NVIDIA Geforce GTX 1080 Ti
+  - cuda 10.2
   
   1. 가상환경 만들기
   ```bash
