@@ -28,12 +28,7 @@ def to_xml(input_json):
 
         input_image_dir = "coco_data/Images/" # "inference input image dir/"
 
-        out_dir = "output"
-        if (os.path.isdir(out_dir) == False):
-            make_out_dir = out_dir
-            os.makedirs(make_out_dir)
-        
-        root_dir = (out_dir + "/inference") # "inference xml 저장 dir/"
+        root_dir = "inference_test" # "inference xml 저장 dir/"
         if (os.path.isdir(root_dir) == False):
             make_root_dir = root_dir
             os.makedirs(make_root_dir)
@@ -88,6 +83,11 @@ def to_xml(input_json):
                 node_xmax.text =  str(new_label[2])
                 node_ymax = SubElement(node_bndbox, 'ymax')
                 node_ymax.text = str(new_label[3])
+                
+                score = anno['score']
+                
+                node_conf = SubElement(node_object, 'confidence')
+                node_conf.text = str(score)
 
                 tree = ElementTree(node_root)
                 tree.write(xml_file_name)
@@ -113,6 +113,11 @@ def to_xml(input_json):
                 node_xmax.text =  str(new_label[2])
                 node_ymax = SubElement(node_bndbox, 'ymax')
                 node_ymax.text = str(new_label[3])
+                
+                score = anno['score']
+                
+                node_conf = SubElement(node_object, 'confidence')
+                node_conf.text = str(score)
                     
                 root.append(node_object)
                 tree.write(xml_file_name)
