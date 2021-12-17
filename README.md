@@ -43,25 +43,25 @@
 - 데이터 전처리  
 
 data 폴더에 데이터를 업로드한 후 아래의 예시와 같이 수행
-
-  python data2voc.py
-  cd Swin-Transformer-Object-Detection/tools/dataset_converters
-  python pascal_voc.py
-
+```bash
+python data2voc.py
+cd Swin-Transformer-Object-Detection/tools/dataset_converters
+python pascal_voc.py
+ ```
 </br>
 - 데이터 후처리
 
 인퍼런스 후에 아래의 예시와 같이 수행
 
 1. 테스트 결과를 xml 파일로 저장
-
-  python coco2voc.py
-
+```bash
+python coco2voc.py
+ ```
 
 2. 시각화 이미지 저장
-
-  python visualize.py
-
+```bash
+python visualize.py
+```
 
 </br>
 - 학습 수행  
