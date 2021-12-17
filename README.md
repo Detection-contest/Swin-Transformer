@@ -53,7 +53,12 @@
 -----
 
 - data 폴더에 데이터를 업로드한 후 아래의 예시와 같이 수행
-```bash
+```
+cd Swin-Transformer
+mkdir data
+cd data
+unzip 학습데이터(40034장).zip
+
 python data2voc.py
 cd Swin-Transformer-Object-Detection/tools/dataset_converters
 python pascal_voc.py
