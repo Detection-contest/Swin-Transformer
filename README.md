@@ -34,12 +34,17 @@
  pip install tqdm
  ```
   
- 5. mmdetection폴더에서 setup.py로 환경 설정
+ 5. Swin-Transformer-Object-Detection폴더에서 setup.py로 환경 설정
  ```bash
+ cd ../Swin-Transformer-Object-Detection
  python setup.py develop
  ```
 </br>
 - 데이터 전처리  
+
+data 폴더에 데이터를 업로드한다.
+'''bash
+
 
 </br>
 - 학습 수행  
