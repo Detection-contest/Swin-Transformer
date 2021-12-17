@@ -21,6 +21,15 @@ def unconvert(width, height, x, y, w, h):
     
     return [xmin, ymin, xmax, ymax]
 
+def truncate_6(num):
+    for i in range(len(num)):
+        if num[i] == '.':
+            try:
+                return num[:i+7]
+            except:
+                return num      
+    return num
+
 def to_xml(input_json):
     
     with open(input_json, "r") as st_json:
@@ -87,7 +96,7 @@ def to_xml(input_json):
                 score = anno['score']
                 
                 node_conf = SubElement(node_object, 'confidence')
-                node_conf.text = str(score)
+                node_conf.text = truncate_6(str(score))
 
                 tree = ElementTree(node_root)
                 tree.write(xml_file_name)
@@ -117,7 +126,7 @@ def to_xml(input_json):
                 score = anno['score']
                 
                 node_conf = SubElement(node_object, 'confidence')
-                node_conf.text = str(score)
+                node_conf.text = truncate_6(str(score))
                     
                 root.append(node_object)
                 tree.write(xml_file_name)
