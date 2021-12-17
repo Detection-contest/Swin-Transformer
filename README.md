@@ -110,7 +110,7 @@ tools/dist_train.sh <CONFIG_FILE> <GPU_NUM> --cfg-options model.pretrained=<PRET
     - 편의를 위해 pretrained된 모델 파일을 Swin-Transformer-Object-Detection폴더 내에 넣어서 수행
 ```
 cd Swin-Transformer-Object-Detection
-python tools/train.py work_dirs/cascade_mask_rcnn_swin_tiny_patch4_window7_mstrain_480-800_giou_4conv1f_adamw_3x_coco/cascade_mask_rcnn_swin_tiny_patch4_window7_mstrain_480-800_giou_4conv1f_adamw_3x_coco.py --cfg-options model.pretrained=swin_tiny_patch4_window7_224.pth
+python tools/train.py configs/swin/cascade_mask_rcnn_swin_tiny_patch4_window7_mstrain_480-800_giou_4conv1f_adamw_3x_coco.py 3 --cfg-options model.pretrained=swin_tiny_patch4_window7_224.pth
 ```
 -----
 </br>
@@ -130,6 +130,6 @@ tools/dist_test.sh <CONFIG_FILE> <DET_CHECKPOINT_FILE> <GPU_NUM> --eval bbox seg
 - 예를 들어, 저희 모델을 GPU 1개인 장치에서 인퍼런스를 수행하라면,  
 
 ```
-python tools/test.py work_dirs/cascade_mask_rcnn_swin_tiny_patch4_window7_mstrain_480-800_giou_4conv1f_adamw_3x_coco/cascade_mask_rcnn_swin_tiny_patch4_window7_mstrain_480-800_giou_4conv1f_adamw_3x_coco.py work_dirs/cascade_mask_rcnn_swin_tiny_patch4_window7_mstrain_480-800_giou_4conv1f_adamw_3x_coco/latest.pth --eval bbox
+python tools/test.py configs/swin/cascade_mask_rcnn_swin_tiny_patch4_window7_mstrain_480-800_giou_4conv1f_adamw_3x_coco.py work_dirs/cascade_mask_rcnn_swin_tiny_patch4_window7_mstrain_480-800_giou_4conv1f_adamw_3x_coco/latest.pth --eval bbox
 ```
 -----
