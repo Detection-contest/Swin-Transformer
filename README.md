@@ -127,9 +127,11 @@ tools/dist_test.sh <CONFIG_FILE> <DET_CHECKPOINT_FILE> <GPU_NUM> --eval bbox seg
 ```  
 -----
 
-- 예를 들어, 저희 모델을 GPU 1개인 장치에서 인퍼런스를 수행하라면,  
+- 예를 들어, 저희 모델을 GPU 1개인 장치에서 인퍼런스를 수행하라면(인퍼런스 수행된 결과 이미지들을 img_results폴더에 저장),
 
 ```
-python tools/test.py configs/swin/cascade_mask_rcnn_swin_tiny_patch4_window7_mstrain_480-800_giou_4conv1f_adamw_3x_coco.py work_dirs/cascade_mask_rcnn_swin_tiny_patch4_window7_mstrain_480-800_giou_4conv1f_adamw_3x_coco/latest.pth --eval bbox
+mkdir img_results
+
+python tools/test.py configs/swin/cascade_mask_rcnn_swin_tiny_patch4_window7_mstrain_480-800_giou_4conv1f_adamw_3x_coco.py work_dirs/cascade_mask_rcnn_swin_tiny_patch4_window7_mstrain_480-800_giou_4conv1f_adamw_3x_coco/latest.pth --eval bbox --show-dir img_results --options "jsonfile_prefix=./results"
 ```
 -----
