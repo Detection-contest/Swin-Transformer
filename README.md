@@ -15,7 +15,7 @@
  conda install pytorch==1.6.0 torchvision==0.7.0 cudatoolkit=10.1 -c pytorch -y
  ```
 
- 3. Swin-Transformer-Object-Detection폴더에서 mmcv-full 라이브러리 다운로드(mmcv-full==1.4.0, mmdet==
+ 3. Swin-Transformer-Object-Detection폴더에서 mmcv-full 라이브러리 다운로드
  ```bash
  cd Swin-Transformer-Object-Detection
  python -m pip install mmcv_full-1.4.0-cp37-cp37m-manylinux1_x86_64.whl
@@ -38,11 +38,28 @@
  ```bash
  python setup.py develop
  ```
-  
+
+- 데이터 전처리
+
+
 - 학습 수행(Swin-Transformer-Object-Detection폴더에서 수행)
-```bash
-cd Swin-Transformer-Object-Detection
 ```
-  <ul>Single GPU</ul>
-  python tools/train.py 
+# single-gpu training
+python tools/train.py <CONFIG_FILE> --cfg-options model.pretrained=<PRETRAIN_MODEL> [model.backbone.use_checkpoint=True] [other optional arguments]
+
+# multi-gpu training
+tools/dist_train.sh <CONFIG_FILE> <GPU_NUM> --cfg-options model.pretrained=<PRETRAIN_MODEL> [model.backbone.use_checkpoint=True] [other optional arguments] 
+```
+예를 들어, 저희 모델을 GPU 1개인 장치에서 학습시키려면,
+```
+
+```
+
 - 인퍼런스 수행
+```
+# single-gpu testing
+python tools/test.py <CONFIG_FILE> <DET_CHECKPOINT_FILE> --eval bbox segm
+
+# multi-gpu testing
+tools/dist_test.sh <CONFIG_FILE> <DET_CHECKPOINT_FILE> <GPU_NUM> --eval bbox segm
+```
