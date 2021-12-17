@@ -1,5 +1,5 @@
 # Detection-contest README.md
------
+
 ## 환경 설정  
  0. 요구사항
   - NVIDIA Geforce GTX 1080 Ti
@@ -42,7 +42,7 @@
   
  5. Swin-Transformer-Object-Detection폴더에서 setup.py로 환경 설정
  ```bash
- cd ../Swin-Transformer-Object-Detection
+ cd ../
  python setup.py develop
  ```
  -----
