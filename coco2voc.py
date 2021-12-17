@@ -28,7 +28,12 @@ def to_xml(input_json):
 
         input_image_dir = "coco_data/Images/" # "inference input image dir/"
 
-        root_dir = "inference_test" # "inference xml 저장 dir/"
+        out_dir = "output"
+        if (os.path.isdir(out_dir) == False):
+            make_out_dir = out_dir
+            os.makedirs(make_out_dir)
+        
+        root_dir = (out_dir + "/inference") # "inference xml 저장 dir/"
         if (os.path.isdir(root_dir) == False):
             make_root_dir = root_dir
             os.makedirs(make_root_dir)
