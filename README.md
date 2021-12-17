@@ -41,8 +41,8 @@
 </br>
 - 데이터 전처리  
 
-</br>  
-- 학습 수행  
+</br>
+- 학습 수행
 Swin-Transformer-Object-Detection폴더에서 수행, Pretrained모델은 아래에서 다운로드 받아서 수행함, Swin-T-IN1K모델을 다운로드 받은 후 아래 예시와 같이 수행  
 
 
