@@ -48,7 +48,7 @@ python data2voc.py
 cd Swin-Transformer-Object-Detection/tools/dataset_converters
 python pascal_voc.py
 '''
-
+</
 - 데이터 후처리
 
 인퍼런스 후에 아래의 예시와 같이 수행
