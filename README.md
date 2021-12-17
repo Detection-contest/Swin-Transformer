@@ -61,7 +61,7 @@ unzip 학습데이터(40034장).zip
 
 python data2voc.py
 cd Swin-Transformer-Object-Detection/tools/dataset_converters
-python pascal_voc.py
+python pascal_voc.py -o ../../../coco_data/ --out-format coco ../../../
  ```
 -----
 </br>
